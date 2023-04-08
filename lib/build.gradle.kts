@@ -37,7 +37,8 @@ tasks.named<Test>("test") {
 
 pitest {
     //adds dependency to org.pitest:pitest-junit5-plugin and sets "testPlugin" to "junit5"
-    setProperty("junit5PluginVersion","1.0.0")    //or 0.15 for PIT <1.9.0
+    junit5PluginVersion.set("1.0.0")
+    targetClasses.set(setOf("mutation.testing.*"))
     // ...
 }
 
